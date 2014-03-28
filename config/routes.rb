@@ -1,11 +1,15 @@
 Blog::Application.routes.draw do
+  #get "welcome/index"
  # get "demo/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-match ':controller(/:action(/:id))', :via=> :get
+#match ':controller(/:action(/:id))', :via=> :get
 
   # You can have the root of your site routed with "root"
-   #root 'welcome#index'
+
+  resources :posts
+
+   root to: "welcome#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
